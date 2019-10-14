@@ -10,5 +10,5 @@
 # limitations under the License.
 #
 # [START runtime]
-runtime: nodejs
+runtime: nodejs10
 # [END runtime]

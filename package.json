@@ -4,7 +4,7 @@
   "description": "TGR 2019",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node app.js"
   },
   "author": "pmppalm",
   "license": "ISC",

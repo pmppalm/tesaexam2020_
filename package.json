@@ -1,0 +1,26 @@
+{
+  "name": "tesasu2020",
+  "version": "1.0.0",
+  "description": "TGR 2019",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "pmppalm",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
+    "connect-flash": "^0.1.1",
+    "crypto": "^1.0.1",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "express-validator": "^5.3.0",
+    "mongoose": "^5.3.8",
+    "morgan": "^1.9.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "request": "^2.88.0"
+  }
+}

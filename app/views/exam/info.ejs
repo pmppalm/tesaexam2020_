@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../layouts/head %>
+</head>
+<body>
+<% include ../layouts/header %>
+
+
+<div class="container">
+    <br/>
+    <% if (error) { %>
+    <div class="alert alert-danger alert-block">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>คำตอบผิด</strong>
+    </div>
+    <% } %>
+    <div class="card">
+        <div class="card-header">
+            ข้อที่ <%= exam.number %> &nbsp; (<%= exam.score %> คะแนน)
+            &nbsp;&nbsp;
+            <% if (user.score[exam.number - 1] == 0) { %>
+            <span class="badge badge-danger">ยังทำทำไม่เสร็จ</span>
+            <% } else{ %>
+            <span class="badge badge-success">ทำเสร็จแล้ว</span>
+            <% } %>
+        </div>
+
+        <div class="card-body">
+            <h5>คำถาม <%= exam.question %></h5>
+            <form action="/exam/send/<%= exam.number %>" method="POST">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="answer" placeholder="คำตอบ" required="true">
+                    <small id="emailHelp" class="form-text text-muted">กรุณาพิมพ์ตัวใหญ่ ตัวเล็ก ให้ถูกต้อง</small>
+                </div>
+                <button type="submit" class="btn btn-success">ส่งคำตอบ</button>
+            </form>
+        </div>
+
+        <% if (exam.number == 6) { %>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">ยกตัวอย่างเช่น</li>
+            <li class="list-group-item">100 มีเลขโดดจำนวน 2 ตัว</li>
+            <li class="list-group-item">101 มีเลขโดดจำนวน 2 ตัว</li>
+            <li class="list-group-item">103 มีเลขโดดจำนวน 3 ตัว</li>
+            <li class="list-group-item">111 มีเลขโดดจำนวน 1 ตัว</li>
+        </ul>
+        <% } %>
+        <% if (exam.number == 9) { %>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">TEATTET1</li>
+            <li class="list-group-item">TAASWAA2</li>
+            <li class="list-group-item">T0AOWAG5</li>
+            <li class="list-group-item">TTATPDO4</li>
+            <li class="list-group-item">TOATTAO6</li>
+            <li class="list-group-item">TGATKWT5</li>
+            <li class="list-group-item">TSARROO8</li>
+        </ul>
+        <% } %>
+    </div>
+</div>
+
+<% include ../layouts/body %>
+</body>
+</html>

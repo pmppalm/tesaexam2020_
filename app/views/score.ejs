@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ./layouts/head %>
+    <script type="text/JavaScript">
+        <!--
+        function AutoRefresh( t ) {
+            setTimeout("location.reload(true);", t);
+        }
+        //-->
+    </script>
+</head>
+<body onload="JavaScript:AutoRefresh(30000);">
+
+    <table class="table table-striped table-dark">
+        <thead>
+        <tr>
+            <th scope="col">รหัสนักศึกษา</th>
+            <th scope="col">1</th>
+            <th scope="col">2</th>
+            <th scope="col">3</th>
+            <th scope="col">4</th>
+            <th scope="col">5</th>
+            <th scope="col">6</th>
+            <th scope="col">7</th>
+            <th scope="col">8</th>
+            <th scope="col">9</th>
+            <th scope="col">10</th>
+            <th scope="col">score</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% users.forEach(function(user){ %>
+        <tr>
+            <th scope="row"><%= user.username %></th>
+            <td>
+                <% if (user.score[0] != 0) { %>
+                <span class="badge badge-success">Pass</span>
+                <% } else{ %>
+                <span class="badge badge-danger">Fail</span>
+                <% } %>
+            </td>
+            <td>
+                <% if (user.score[1] != 0) { %>
+                <span class="badge badge-success">Pass</span>
+                <% } else{ %>
+                <span class="badge badge-danger">Fail</span>
+                <% } %>
+            </td>
+            <td>
+                <% if (user.score[2] != 0) { %>
+                <span class="badge badge-success">Pass</span>
+                <% } else{ %>
+                <span class="badge badge-danger">Fail</span>
+                <% } %>
+            </td>
+            <td>
+                <% if (user.score[3] != 0) { %>
+                <span class="badge badge-success">Pass</span>
+                <% } else{ %>
+                <span class="badge badge-danger">Fail</span>
+                <% } %>
+            </td>
+            <td>
+                <% if (user.score[4] != 0) { %>
+                <span class="badge badge-success">Pass</span>
+                <% } else{ %>
+                <span class="badge badge-danger">Fail</span>
+                <% } %>
+            </td>
+            <td>
+                <% if (user.score[5] != 0) { %>
+                <span class="badge badge-success">Pass</span>
+                <% } else{ %>
+                <span class="badge badge-danger">Fail</span>
+                <% } %>
+            </td>
+            <td>
+                <% if (user.score[6] != 0) { %>
+                <span class="badge badge-success">Pass</span>
+                <% } else{ %>
+                <span class="badge badge-danger">Fail</span>
+                <% } %>
+            </td>
+            <td>
+                <% if (user.score[7] != 0) { %>
+                <span class="badge badge-success">Pass</span>
+                <% } else{ %>
+                <span class="badge badge-danger">Fail</span>
+                <% } %>
+            </td>
+            <td>
+                <% if (user.score[8] != 0) { %>
+                <span class="badge badge-success">Pass</span>
+                <% } else{ %>
+                <span class="badge badge-danger">Fail</span>
+                <% } %>
+            </td>
+            <td>
+                <% if (user.score[9] != 0) { %>
+                <span class="badge badge-success">Pass</span>
+                <% } else{ %>
+                <span class="badge badge-danger">Fail</span>
+                <% } %>
+            </td>
+            <td><%= user.total %></td>
+        </tr>
+        <% }); %>
+        </tbody>
+    </table>
+
+<% include ./layouts/body %>
+</body>
+</html>

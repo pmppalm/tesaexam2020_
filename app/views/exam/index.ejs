@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../layouts/head %>
+</head>
+
+<body>
+    <% include ../layouts/header %>
+
+    <div class="container">
+        <br />
+        <form action="/logout" method="POST">
+            <div class="form-group row mb-0">
+                <button type="submit" class="btn btn-danger">
+                    Logout
+                </button>
+            </div>
+        </form>
+
+        <% exams.forEach(function(exam){ %>
+        <br />
+        <% if (exam._id != "5bdc1f104bf58e18c8be7554") { %>
+        <div class="card">
+            <div class="card-header">
+                ข้อที่ <%= exam.number %>&nbsp;<%= exam.question %>&nbsp;(<%= exam.score %> คะแนน)
+                &nbsp;&nbsp;
+                <% if (user.score[exam.number - 1] == 0) { %>
+                <span class="badge badge-danger">ยังทำทำไม่เสร็จ</span>
+                <% } else{ %>
+                <span class="badge badge-success">ทำเสร็จแล้ว</span>
+                <% } %>
+            </div>
+            <div class="card-body">
+                <a href="/exam/<%= exam.number %>" class="btn btn-primary">ดูข้อสอบ</a>
+            </div>
+        </div>
+        <% } %>
+        <% }); %>
+        <br />
+    </div>
+
+    <% include ../layouts/body %>
+</body>
+
+</html>

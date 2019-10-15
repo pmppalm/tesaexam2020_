@@ -247,7 +247,7 @@ exports.getVehicle2 = function (req, res, next) {
 
 exports.postRequest = function (req, res, next) {
     if(req.body.name == "muzic"){
-        res.send("Luck");
+        res.send("Lucky");
     }
     else{
         res.send("CPSU");
